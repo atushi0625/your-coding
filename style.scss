@@ -1,0 +1,77 @@
+@use 'sass/header';
+@use 'sass/service';
+@use 'sass/price';
+@use 'sass/main';
+@use 'sass/faq';
+@use 'sass/blog';
+@use 'sass/works';
+@use 'sass/footer';
+@use 'sass/contact';
+
+// pcサイズ（1920px以上,1280pxあたり）
+// 　タブレットサイズ（768px,1024px）
+// 　spサイズ（375px,414px）
+$pc: 1280px; // PC
+$tab: 768px; // タブレット
+$sp: 414px; // スマホ
+
+@mixin pc {
+     @media (max-width: ($pc)) {
+          @content;
+     }
+}
+
+@mixin tab {
+     @media (max-width: ($tab)) {
+          @content;
+     }
+}
+
+@mixin sp {
+     @media (max-width: ($sp)) {
+          @content;
+     }
+}
+
+
+body {
+     font-family: 'Noto Sans JP', sans-serif, Bold 700;
+     color: #333333;
+     font-weight: 700;
+}
+
+.hero {
+     overflow: hidden;
+}
+
+a {
+     text-decoration: none;
+}
+
+.wrapper {
+     max-width: 1366px;
+     margin: 0 auto;
+}
+
+/*セクションのメインタイトルと価格・質問・ブログ・制作実績タイトル*/
+.heading-title {
+     margin-top: 50px;
+     text-align: center;
+
+     .heading-heading {
+          font-size: 32px;
+          line-height: 1.4;
+
+          @include sp {
+               font-size: 29px;
+          }
+
+     }
+
+     .heading-sub {
+          margin-top: 11px;
+          line-height: 1.5;
+          display: block;
+          color: #3ba6c9;
+     }
+}

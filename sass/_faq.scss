@@ -1,0 +1,93 @@
+// pcサイズ（1920px以上,1280pxあたり）
+// 　タブレットサイズ（768px,1024px）
+// 　spサイズ（375px,414px）
+$pc: 1280px; // PC
+$tab: 768px; // タブレット
+$sp: 414px; // スマホ
+
+@mixin pc {
+     @media (max-width: ($pc)) {
+          @content;
+     }
+}
+
+@mixin tab {
+     @media (max-width: ($tab)) {
+          @content;
+     }
+}
+
+@mixin sp {
+     @media (max-width: ($sp)) {
+          @content;
+     }
+}
+
+
+#faq {
+     max-width: 100%;
+     padding: 55px 0 86px;
+
+}
+
+/*質問内容全体*/
+.faq-wrapper {
+     max-width: 907px;
+     margin: 0 auto;
+     margin-top: 32px;
+
+     @include sp {
+          padding: 0 15px;
+     }
+}
+
+/*質問などの表はdlタグで作成*/
+.faq-list {
+     margin: 0 auto;
+     width: 100%;
+     border: 1px solid #e5e5e5;
+
+     dt {
+          border: 1px solid #e5e5e5;
+          height: 58px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          @include sp {
+               text-align: center;
+          }
+     }
+
+     dd {
+          height: 0;
+          font-size: 0.875rem;
+          border: 1px solid #e5e5e5;
+          background-color: #f2f2f2;
+          overflow: hidden;
+          opacity: 0;
+          transition-duration: .3s;
+
+          @include sp {}
+
+     }
+
+     dt:hover,
+     dt:active,
+     dt.is-active {
+          opacity: .5;
+          transition: .4s;
+          text-decoration: underline;
+          cursor: pointer;
+     }
+
+
+     dd.is-open {
+          //アコーディオン用クラス
+          line-height: 1.8;
+          padding: 23px 0 27px 35px;
+          opacity: 1;
+          height: auto;
+     }
+
+}

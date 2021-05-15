@@ -1,0 +1,125 @@
+// pcサイズ（1920px以上,1280pxあたり）
+// 　タブレットサイズ（768px,1024px）
+// 　spサイズ（375px,414px）
+$pc: 1280px; // PC
+$tab: 768px; // タブレット
+$sp: 414px; // スマホ
+
+@mixin pc {
+     @media (max-width: ($pc)) {
+          @content;
+     }
+}
+
+@mixin tab {
+     @media (max-width: ($tab)) {
+          @content;
+     }
+}
+
+@mixin sp {
+     @media (max-width: ($sp)) {
+          @content;
+     }
+}
+
+
+
+.main {
+
+     /*背景画像の設定*/
+     @include pc {
+          background-size: 750px 790px;
+          background-position: top -100px right -100px;
+
+     }
+
+     @include tab {
+          background-size: 1500px 900px;
+          background-position: top -150px center;
+     }
+
+     @include sp {
+
+          background-size: 900px 800px;
+          background-position: center top 0px;
+     }
+
+
+     z-index: -20;
+     background-image: url(../img/circle.png);
+     background-repeat: no-repeat;
+     background-size:950px 800px;
+     background-position: top -100px right -70px;
+     margin-bottom: 71px;
+     padding-bottom:10%;
+
+
+     /*全体のインナーにフレックスボックス*/
+     .main-inner {
+          width: 100%;
+          max-width: 1022px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          @include pc {
+               padding: 0 5%;
+          }
+
+          @include tab {
+               flex-direction: column;
+          }
+
+
+     }
+}
+
+/*左側のテキスト全体*/
+.main-title {
+     margin-top: 253px;
+
+     @include tab {
+          margin-top: 150px;
+     }
+
+
+     .main-heading {
+          font-weight: bold;
+          font-size: 32px;
+          margin-bottom: 44px;
+          line-height: 1.4;
+
+     }
+
+     .main-text {
+          margin-bottom: 45px;
+          font-size: 16px;
+          line-height: 1.5;
+
+     }
+}
+
+/*画像*/
+.main-img {
+     margin-top: 225px;
+     text-align: right;
+     width: 50%;
+
+     @include tab {
+          margin-top: 0px;
+          width: 60%;
+     }
+
+     @include sp {
+          width: 80%;
+     }
+
+     img {
+          max-width: 100%;
+          height: auto;
+          vertical-align: bottom;
+     }
+
+}

@@ -1,0 +1,170 @@
+// pcサイズ（1920px以上,1280pxあたり）
+// 　タブレットサイズ（768px,1024px）
+// 　spサイズ（375px,414px）
+$pc: 1280px; // PC
+$tab: 650px; // タブレット
+$sp: 414px; // スマホ
+
+@mixin pc {
+     @media (max-width: ($pc)) {
+          @content;
+     }
+}
+
+@mixin tab {
+     @media (max-width: ($tab)) {
+          @content;
+     }
+}
+
+@mixin sp {
+     @media (max-width: ($sp)) {
+          @content;
+     }
+}
+
+
+#contact {
+     background: linear-gradient(90deg, #05a5fa 0%, #63fbd7 100%, #67ffd6 100%);
+     padding: 63px 0 70px;
+}
+
+.contact-form-wrap {
+     width: 100%;
+     max-width: 908px;
+     height: 689px;
+     margin: 0 auto;
+     background-color: #fff;
+
+     @include tab {
+          max-width: 90%;
+     }
+
+}
+
+.contact-title-color {
+     color: #fff;
+}
+
+.contact-caption {
+     line-height: 1.5;
+     margin: 36px 0 44px;
+}
+
+.contact-sub {
+     margin-top: 11px;
+     line-height: 1.5;
+     display: block;
+
+}
+
+/*3つのラベルとテキストを囲んでいbox*/
+.contact-text {
+     margin-left: 63px;
+
+     @include tab {
+          margin: 1rem;
+
+     }
+
+     span {
+          position: relative;
+          top: -2px;
+          background-color: #0c449b;
+          color: #fff;
+          border-radius: 10px;
+          font-size: 0.875rem;
+          padding: 4px 16px 6px;
+          line-height: 1.8;
+          margin-left: 16px;
+     }
+}
+
+/*フォーム全体*/
+form {
+     width: 100%;
+     padding-top: 8px;
+
+     @include sp {
+          margin: 0 auto;
+
+     }
+
+}
+
+/*それぞれのラベル名をブロック要素にして改行*/
+label {
+     margin-top: 23px;
+     display: block;
+}
+
+
+/*入力欄の装飾*/
+input[type="text"],
+input[type="email"],
+textarea {
+     background-color: #eefbfb;
+     border-radius: 3px;
+}
+
+
+/*お名前、メール蘭*/
+input[type="text"],
+input[type="email"] {
+     width: 100%;
+     max-width: 499px;
+     margin-top: 36px;
+     height: 43px;
+
+}
+
+
+/*お問い合わせ内容蘭*/
+
+textarea {
+     width: 100%;
+     max-width: 783px;
+     margin-top: 39px;
+     height: 179px;
+}
+
+
+
+
+/*同意チェックと送信ボタン*/
+.center {
+     margin-top: 27px;
+     text-align: center;
+
+}
+
+input[type="checkbox"] {
+     display: inline-block;
+     position: relative;
+     top: -2px;
+     right: 10px;
+     width: 20px;
+     height: 20px;
+
+}
+
+input[type="submit"] {
+     width: 155px;
+     height: 37px;
+     margin-top: 30px;
+     background: linear-gradient(90deg, #fa41cc 0%, #6020b0 100%);
+     border-radius: 10px;
+     box-shadow: 0px 3px 6px #00000029;
+     opacity: 1;
+     color: #fff;
+     line-height: 1.4;
+     font-size: 0.875rem;
+}
+
+.end-message {
+     display: none;
+}
+
+.false-message {
+     display: none;
+}

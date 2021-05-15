@@ -1,0 +1,133 @@
+// pcサイズ（1920px以上,1280pxあたり）
+// 　タブレットサイズ（768px,1024px）
+// 　spサイズ（375px,414px）
+$pc: 1280px; // PC
+$tab: 768px; // タブレット
+$sp: 414px; // スマホ
+
+@mixin pc {
+     @media (max-width: ($pc)) {
+          @content;
+     }
+}
+
+@mixin tab {
+     @media (max-width: ($tab)) {
+          @content;
+     }
+}
+
+@mixin sp {
+     @media (max-width: ($sp)) {
+          @content;
+     }
+}
+
+
+/*３番目のセクションの次のコンテンツとのボトムの余白*/
+#service-sard {
+     margin-bottom: 156px;
+}
+
+
+/*サービス内容全体最大幅*/
+.service-wrapper {
+     width: 100%;
+     max-width: 1022px;
+     margin: 0 auto;
+
+     @include pc {
+          padding: 0 5%;
+     }
+}
+
+/*３つの特徴それぞれのタイトル*/
+.service-title {
+     margin-top: 57px;
+     text-align: center;
+     font-size: 1.75rem;
+
+     @include tab {
+          margin-top: 150px;
+     }
+
+     @include sp {
+          margin-top: 100px;
+     }
+}
+
+
+.service-content {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     align-content: center;
+     margin-top: 62px;
+     // text-align: center;
+
+     @include tab {
+          flex-direction: column;
+     }
+
+}
+
+.flex-reverse {
+     @include tab {
+          flex-direction: column-reverse;
+
+     }
+}
+
+
+/*それぞれの画像*/
+.feature-img-wrap {
+     width: 100%;
+
+     .feature-img {
+          max-width: 100%;
+          height: auto;
+          vertical-align: bottom;
+     }
+
+     @include tab {
+          width: 70%;
+     }
+}
+
+/*テキスト全体*/
+.service-item-document {
+     width: 100%;
+
+     @include tab {
+          margin-top: 40px;
+          width: 80%;
+     }
+
+     @include sp {
+          width: 75%;
+     }
+
+
+     .service-heading {
+          font-size: 1.5rem;
+          line-height: 2;
+
+          @include tab {
+               br {
+                    display: none;
+               }
+          }
+     }
+
+     .service-text {
+          margin-top: 45px;
+          font-size: 1rem;
+          line-height: 1.6;
+
+          @include tab {
+               br {
+                    display: none;
+               }
+          }
+     }
+}

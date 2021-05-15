@@ -1,0 +1,79 @@
+/*pcサイズ（1920px以上,1280pxあたり）
+　タブレットサイズ（768px,1024px）
+　spサイズ（375px,414px）*/
+$pc: 1280px; // PC
+$tab: 768px; // タブレット
+$sp: 414px; // スマホ
+
+/*レスポンシブ、ブレイクポイント*/
+@mixin pc {
+     @media (max-width: ($pc)) {
+          @content;
+     }
+}
+
+@mixin tab {
+     @media (max-width: ($tab)) {
+          @content;
+     }
+}
+
+@mixin sp {
+     @media (max-width: ($sp)) {
+          @content;
+     }
+}
+
+
+#works {
+     padding: 55px 0 90px;
+     margin: 0 auto;
+
+}
+
+/*swiper関係*/
+.swiper-container {
+     max-width: 100vw;
+}
+
+.swiper-wrapper {
+     margin: 0 auto;
+     margin-top: 68px;
+}
+
+.swiper-slide {
+     border: 1px solid #dddddd;
+     border-radius: 8px;
+
+     @include sp {
+          width: 30%;
+          height: 30%;
+     }
+
+     .blog-img {
+          max-width: 100%;
+          height: auto;
+     }
+
+     img {
+          width: 100%;
+          vertical-align: bottom;
+     }
+}
+
+
+
+
+
+/*制作実績のテキストとタイトル*/
+.works-title {
+     padding: 25px 0 30px 18px;
+     line-height: 1.5;
+}
+
+.works-text {
+     font-size: 0.875rem;
+     padding-left: 18px;
+     padding-bottom: 40px;
+     line-height: 1.4;
+}

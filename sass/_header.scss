@@ -1,0 +1,341 @@
+// pcサイズ（1920px以上,1280pxあたり）
+// 　タブレットサイズ（768px,1024px）
+// 　spサイズ（375px,414px）
+
+
+$pc: 1280px; // PC
+$tab: 900px; // タブレット
+$sp: 414px; // スマホ
+
+@mixin pc {
+     @media (max-width: ($pc)) {
+          @content;
+     }
+}
+
+@mixin tab {
+     @media (max-width: ($tab)) {
+          @content;
+     }
+}
+
+@mixin sp {
+     @media (max-width: ($sp)) {
+          @content;
+     }
+}
+
+
+
+.header {
+     position: fixed;
+     z-index: 70;
+     top: 0;
+     left: 0;
+     width: 100%;
+     box-shadow: 0px 3px 6px #00000029;
+     opacity: 1;
+     background: #fff;
+
+     /*ヘッダーの中身全体の最大値と中央揃え*/
+     .header-wrapper {
+          width: 100%;
+          max-width: 1022px;
+          height: 94px;
+          margin: 0 auto;
+
+          @include pc {
+               padding: 0 5%;
+          }
+     }
+
+     /*インナーで囲み、要素全体をフレックスボックスにて横並び*/
+     .header-inner {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+     }
+
+}
+
+/*タイトルロゴ名*/
+.logo-hed {
+     margin: 24px 24px 23px 0;
+     text-align: left;
+}
+
+.logo-link {
+     display: block;
+     font-weight: bold;
+     font-size: 24px;
+
+     &::after {
+          display: inline-block;
+          content: 'ユアコーディング';
+          padding-bottom: 12px;
+     }
+
+     /*ロゴ画像*/
+     .img-logo {
+          width: 47px;
+          height: 47px;
+          margin-right: 16px;
+          margin-left: 20px;
+     }
+}
+
+/*ナブメニュー*/
+.main-nav {
+     display: flex;
+     list-style: none;
+     margin: 34px 0 36px;
+
+     @include tab {
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+
+     }
+
+     .nav-list {
+          text-align: center;
+          padding-right: 46px;
+
+          &:nth-child(3) {
+               padding-right: 0;
+          }
+     }
+
+     .nav-link {
+          display: inline-block;
+          font-size: 16px;
+
+          @include tab {
+               font-size: 30px;
+          }
+     }
+}
+
+/*お問い合わせボタン*/
+.contact-btn {
+
+
+     margin: 29px 0 28px 80px;
+
+     .contact-link {
+          text-align: center;
+          width: 155px;
+          height: 37px;
+          display: inline-block;
+          background: linear-gradient(90deg, #fa41cc 0%, #6020b0 100%);
+          border-radius: 10px;
+          padding-top: 7px;
+          box-shadow: 0px 3px 6px #00000029;
+          opacity: 1;
+          color: #fff;
+          line-height: 1.4;
+
+     }
+
+}
+
+.header .contact-btn {
+     @include tab {
+          display: none;
+     }
+}
+
+.button {
+     display: none;
+     background-color: transparent;
+
+     @include tab {
+          display: inline-block;
+          margin-right: 10px;
+     }
+
+}
+
+.hamburger {
+     position: fixed;
+     top: 20px;
+     right: 0;
+     z-index: 5;
+     width: 48px;
+     height: 48px;
+     border: 1px solid #333333;
+     border-radius: 50%;
+     transition: all .3 ease-in-out;
+
+     &:hover,
+     &:focus {
+          box-shadow: 0 0 .5rem rgba(161, 161, 161, 0.5);
+     }
+
+}
+
+.hamburger__line {
+     position: absolute;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     margin: auto;
+     width: 18px;
+     height: 2px;
+     background-color: #333333;
+     transition: inherit;
+
+     &::before,
+     &::after {
+
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 100%;
+          content: '';
+          background-color: inherit;
+          transition: inherit;
+
+     }
+
+}
+
+.drawer-background {
+     background-color: none;
+
+     @include tab {
+          position: fixed;
+          z-index: 3;
+          width: 100vw;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          overflow: hidden;
+          height: 100vh;
+          background-color: #000;
+
+          visibility: hidden;
+          opacity: 0;
+     }
+
+}
+
+/*ハンバーガーアイコンボタンがクリックされたら発火するクラス*/
+.is-drawerActive {
+     .sp-global-menu {
+          transform: skewX(-15deg) translateX(-45%);
+          transition: 0.3s;
+
+          @include sp {
+               transform: skewX(0deg) translateX(0%) translateY(34%);
+               transition: all 0.4s ease-in-out;
+               height: 280px;
+               visibility: visible;
+               opacity: 1;
+          }
+     }
+
+     .hamburger {
+          @include tab {
+               border: 1px solid #fff;
+          }
+
+          @include sp {
+               border: 1px solid #333333;
+          }
+
+     }
+
+     .drawer-background {
+
+          visibility: visible;
+          opacity: 0.8;
+          transition: 0.3s;
+
+          @include sp {
+               visibility: hidden;
+               opacity: 0;
+
+               background: none;
+          }
+     }
+
+
+}
+
+
+.hamburger__line::before {
+     top: -5px;
+}
+
+.hamburger__line::after {
+     top: 5px;
+}
+
+.hamburger[aria-expanded="true"] .hamburger__line {
+     background-color: transparent;
+
+     &::before,
+     &::after {
+          top: 0;
+          background-color: #fff;
+
+          @include sp {
+               background-color: #333333;
+          }
+     }
+}
+
+.hamburger[aria-expanded="true"] .hamburger__line::before {
+     transform: rotate(45deg);
+}
+
+.hamburger[aria-expanded="true"] .hamburger__line::after {
+     transform: rotate(-45deg);
+}
+
+.sp-global-menu {
+     @include tab {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(70deg, #fa41cc 0%, #6020b0 100%);
+          color: #fff;
+          position: fixed;
+          z-index: 4;
+          width: 280px;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          overflow: hidden;
+          height: 100vh;
+          transform: translateX(280px);
+          transition: opacity .3s ease; //この設定でブレイクポイント時、一瞬の色映りが消える
+          line-height: 2;
+     }
+
+     @include sp {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #fff;
+          color: #333333;
+          position: fixed;
+          z-index: 4;
+          width: 100vw;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          overflow: hidden;
+          height: 0;
+          transform: translateY(50px);
+          transition: opacity .3s ease; //この設定でブレイクポイント時、一瞬の色映りが消える
+          line-height: 2;
+          opacity: 0;
+          visibility: hidden;
+     }
+
+}

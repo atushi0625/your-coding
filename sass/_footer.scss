@@ -1,0 +1,67 @@
+/*pcサイズ（1920px以上,1280pxあたり）
+　タブレットサイズ（768px,1024px）
+　spサイズ（375px,414px）*/
+$pc: 1280px; // PC
+$tab: 768px; // タブレット
+$sp: 414px; // スマホ
+
+/*レスポンシブ、ブレイクポイント*/
+@mixin pc {
+     @media (max-width: ($pc)) {
+          @content;
+     }
+}
+
+@mixin tab {
+     @media (max-width: ($tab)) {
+          @content;
+     }
+}
+
+@mixin sp {
+     @media (max-width: ($sp)) {
+          @content;
+     }
+}
+
+
+
+.footer-wrapper {
+     width: 100%;
+     background-color: #f8f8f8;
+     margin: 0 auto;
+     padding: 43px 0 49px;
+     text-align: center;
+
+     @include sp {
+          display: flex;
+          flex-direction: column;
+     }
+
+     .footer-title {
+          font-size: 1.5rem;
+          margin-bottom: 21px;
+          line-height: 1.1;
+     }
+
+     .privacy {
+          padding-right: 29px;
+
+     }
+
+     .copyright {
+          @include sp {
+               margin-top: 20px;
+          }
+
+     }
+
+     small {
+          font-weight: 400;
+          font-size: 0.875rem;
+          line-height: 1.4;
+          margin-top: 52px;
+          display: block;
+
+     }
+}
