@@ -42,14 +42,20 @@ $sp: 414px; // スマホ
           font-size: 1.5rem;
           margin-bottom: 21px;
           line-height: 1.1;
+          font-weight: bold;
      }
 
      .privacy {
           padding-right: 29px;
+          font-size: 1rem;
+          font-weight: bold;
 
      }
 
      .copyright {
+          font-size: 1rem;
+          font-weight: bold;
+
           @include sp {
                margin-top: 20px;
           }

@@ -49,13 +49,16 @@ $sp: 414px; // スマホ
 .contact-caption {
      line-height: 1.5;
      margin: 36px 0 44px;
+     font-weight: bold;
+     font-size: 1rem;
 }
 
 .contact-sub {
      margin-top: 11px;
      line-height: 1.5;
      display: block;
-
+     font-size: 1rem;
+     font-weight: bold;
 }
 
 /*3つのラベルとテキストを囲んでいbox*/
@@ -77,6 +80,7 @@ $sp: 414px; // スマホ
           padding: 4px 16px 6px;
           line-height: 1.8;
           margin-left: 16px;
+          font-weight: bold;
      }
 }
 
@@ -138,6 +142,11 @@ textarea {
 
 }
 
+label {
+     font-size: 1rem;
+     font-weight: bold;
+}
+
 input[type="checkbox"] {
      display: inline-block;
      position: relative;
@@ -145,7 +154,10 @@ input[type="checkbox"] {
      right: 10px;
      width: 20px;
      height: 20px;
+}
 
+.privacyCheck {
+     display: inline-block;
 }
 
 input[type="submit"] {
@@ -159,6 +171,7 @@ input[type="submit"] {
      color: #fff;
      line-height: 1.4;
      font-size: 0.875rem;
+     font-weight: bold;
 }
 
 .end-message {

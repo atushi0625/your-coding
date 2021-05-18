@@ -46,6 +46,7 @@ $sp: 414px; // スマホ
      margin-top: 57px;
      text-align: center;
      font-size: 1.75rem;
+     font-weight: bold;
 
      @include tab {
           margin-top: 150px;
@@ -63,7 +64,6 @@ $sp: 414px; // スマホ
      justify-content: space-between;
      align-content: center;
      margin-top: 62px;
-     // text-align: center;
 
      @include tab {
           flex-direction: column;
@@ -109,6 +109,7 @@ $sp: 414px; // スマホ
 
 
      .service-heading {
+          font-weight: bold;
           font-size: 1.5rem;
           line-height: 2;
 
@@ -123,6 +124,7 @@ $sp: 414px; // スマホ
           margin-top: 45px;
           font-size: 1rem;
           line-height: 1.6;
+          font-weight: bold;
 
           @include tab {
                br {

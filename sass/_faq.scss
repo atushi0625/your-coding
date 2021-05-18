@@ -26,7 +26,7 @@ $sp: 414px; // スマホ
 
 #faq {
      max-width: 100%;
-     padding: 55px 0 86px;
+     padding: 55px 0px 86px;
 
 }
 
@@ -35,6 +35,10 @@ $sp: 414px; // スマホ
      max-width: 907px;
      margin: 0 auto;
      margin-top: 32px;
+
+     @include tab {
+          padding: 0 20px;
+     }
 
      @include sp {
           padding: 0 15px;
@@ -53,22 +57,25 @@ $sp: 414px; // スマホ
           display: flex;
           justify-content: center;
           align-items: center;
+          font-weight: bold;
+          font-size: 0.875rem;
 
           @include sp {
                text-align: center;
+               padding: 0 25px;
           }
      }
 
      dd {
           height: 0;
-          font-size: 0.875rem;
           border: 1px solid #e5e5e5;
           background-color: #f2f2f2;
           overflow: hidden;
           opacity: 0;
           transition-duration: .3s;
+          font-weight: bold;
+          font-size: 0.875rem;
 
-          @include sp {}
 
      }
 

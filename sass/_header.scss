@@ -37,6 +37,7 @@ $sp: 414px; // スマホ
      opacity: 1;
      background: #fff;
 
+
      /*ヘッダーの中身全体の最大値と中央揃え*/
      .header-wrapper {
           width: 100%;
@@ -44,9 +45,6 @@ $sp: 414px; // スマホ
           height: 94px;
           margin: 0 auto;
 
-          @include pc {
-               padding: 0 5%;
-          }
      }
 
      /*インナーで囲み、要素全体をフレックスボックスにて横並び*/
@@ -61,14 +59,14 @@ $sp: 414px; // スマホ
 
 /*タイトルロゴ名*/
 .logo-hed {
-     margin: 24px 24px 23px 0;
+     margin: 24px 24px 23px;
      text-align: left;
 }
 
 .logo-link {
      display: block;
      font-weight: bold;
-     font-size: 24px;
+     font-size: 1.5rem;
 
      &::after {
           display: inline-block;
@@ -81,7 +79,6 @@ $sp: 414px; // スマホ
           width: 47px;
           height: 47px;
           margin-right: 16px;
-          margin-left: 20px;
      }
 }
 
@@ -110,6 +107,7 @@ $sp: 414px; // スマホ
      .nav-link {
           display: inline-block;
           font-size: 16px;
+          font-weight: bold;
 
           @include tab {
                font-size: 30px;
@@ -135,7 +133,8 @@ $sp: 414px; // スマホ
           opacity: 1;
           color: #fff;
           line-height: 1.4;
-
+          font-weight: bold;
+          font-size: 0.875rem;
      }
 
 }

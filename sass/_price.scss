@@ -39,6 +39,10 @@ $sp: 414px; // スマホ
      margin: 0 auto;
      margin-top: 70px;
 
+     @include tab {
+          padding: 0 20px;
+     }
+
      @include sp {
           padding: 0 15px;
      }
@@ -59,12 +63,17 @@ $sp: 414px; // スマホ
           border: 1px solid #e5e5e5;
           vertical-align: middle;
           text-align: center;
+          font-weight: bold;
+          font-size: 1rem;
+          padding: 0 15px;
      }
 
      td {
           width: 70%;
           vertical-align: middle;
           padding-left: 30.5px;
+          font-weight: bold;
+          font-size: 1rem;
 
           @include sp {
                width: 50%;
@@ -76,4 +85,6 @@ $sp: 414px; // スマホ
 .price-text {
      text-align: center;
      margin: 36px 0 0;
+     font-weight: bold;
+     font-size: 1rem;
 }

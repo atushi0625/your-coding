@@ -88,6 +88,7 @@ $sp: 414px; // スマホ
      font-size: 1.125rem;
      line-height: 1.4;
      height: 127px;
+     font-weight: bold;
 
      @include pc {
           br {
@@ -100,4 +101,6 @@ $sp: 414px; // スマホ
 .blog-time {
      padding: 0px 32px 10px 0;
      text-align: right;
+     font-size: 1rem;
+     font-weight: bold;
 }

@@ -35,9 +35,8 @@ $sp: 414px; // スマホ
 
 
 body {
-     font-family: 'Noto Sans JP', sans-serif, Bold 700;
+     font-family: 'Noto Sans JP', sans-serif;
      color: #333333;
-     font-weight: 700;
 }
 
 .hero {
@@ -59,8 +58,9 @@ a {
      text-align: center;
 
      .heading-heading {
-          font-size: 32px;
+          font-size: 2rem;
           line-height: 1.4;
+          font-weight: bold;
 
           @include sp {
                font-size: 29px;
@@ -73,5 +73,7 @@ a {
           line-height: 1.5;
           display: block;
           color: #3ba6c9;
+          font-size: 1rem;
+          font-weight: bold;
      }
 }
