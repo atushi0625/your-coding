@@ -99,6 +99,10 @@ $sp: 414px; // スマホ
           text-align: center;
           padding-right: 46px;
 
+          @include sp {
+               padding-right: 0;
+          }
+
           &:nth-child(3) {
                padding-right: 0;
           }
