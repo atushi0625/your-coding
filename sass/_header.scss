@@ -234,7 +234,7 @@ $sp: 414px; // スマホ
           @include sp {
                transform: skewX(0deg) translateX(0%) translateY(34%);
                transition: all 0.4s ease-in-out;
-               height: 280px;
+               height: 400px;
                visibility: visible;
                opacity: 1;
           }
@@ -245,9 +245,6 @@ $sp: 414px; // スマホ
                border: 1px solid #fff;
           }
 
-          @include sp {
-               border: 1px solid #333333;
-          }
 
      }
 
@@ -257,12 +254,6 @@ $sp: 414px; // スマホ
           opacity: 0.8;
           transition: 0.3s;
 
-          @include sp {
-               visibility: hidden;
-               opacity: 0;
-
-               background: none;
-          }
      }
 
 
@@ -285,9 +276,6 @@ $sp: 414px; // スマホ
           top: 0;
           background-color: #fff;
 
-          @include sp {
-               background-color: #333333;
-          }
      }
 }
 
@@ -329,7 +317,7 @@ $sp: 414px; // スマホ
           position: fixed;
           z-index: 4;
           width: 100vw;
-          top: 0;
+          top: -45px;
           right: 0;
           bottom: 0;
           overflow: hidden;
